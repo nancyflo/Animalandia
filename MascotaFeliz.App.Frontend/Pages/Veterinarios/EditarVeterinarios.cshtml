@@ -1,0 +1,36 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditarVeterinariosModel
+@{
+}
+
+<body background="https://cdn.pixabay.com/photo/2016/06/24/15/48/pattern-1477380__340.png">
+    <div class="container px-4">
+        <h2>Agregar o editar Veterinario</h2>
+        <div class="row gx-5">
+            <div class="col">
+                <form method="post">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="veterinario.Id" />
+                        <label asp-for="veterinario.Nombres"></label>
+                        <input asp-for="veterinario.Nombres" class="form-control">
+                        <label asp-for="veterinario.Apellidos"></label>
+                        <input asp-for="veterinario.Apellidos" class="form-control">
+                        <label asp-for="veterinario.Direccion"></label>
+                        <input asp-for="veterinario.Direccion" class="form-control">
+                        <label asp-for="veterinario.Telefono"></label>
+                        <input asp-for="veterinario.Telefono" class="form-control">
+                        <label asp-for="veterinario.TarjetaProfesional"></label>
+                        <input asp-for="veterinario.TarjetaProfesional" class="form-control">
+
+                        <button type="submit" class="btn btn-danger">Grabar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <img src="https://cdn.pixabay.com/photo/2021/11/23/18/27/veterinary-6819364__340.png">
+
+            </div>
+        </div>
+    </div>
+    <a asp-page="./ListaVeterinarios" class="btn-default">Lista de Veterinarios </a>
+</body>

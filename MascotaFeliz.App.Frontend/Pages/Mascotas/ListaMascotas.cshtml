@@ -1,0 +1,57 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaMascotasModel
+@{
+}
+
+        <section class="intro">
+            <div class="bg-image h-100">
+                <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.35);">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="table-responsive bg-white" data-mdb-perfect-scrollbar="true"
+                                    style="position: relative; height: 450px; width: 100%;">
+                                    <table class="table">
+                                        <h1>Listado de Mascotas</h1>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">NOMBRE</th>
+                                                <th scope="col">COLOR</th>
+                                                <th scope="col">PROPIETARIO</th>
+                                                <th scope="col">DETALLES</th>
+                                                <th scope="col">EDITAR</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           @foreach (var mascota in Model.listaMascotas)
+    {
+        <tr>
+            <td>@mascota.Nombre</td>
+            <td>@mascota.Color</td>
+            <td>@mascota.Dueno.Nombres</td>
+            <td>
+                <a class="btn btn-danger table-btn" asp-page="./DetallesMascotas" asp-route-mascotaId="@mascota.Id">
+                    Detalle Mascota
+                </a>
+            </td>
+             <td>
+                <a class="btn btn-danger table-btn" asp-page="./EditarMascotas" asp-route-mascotaId="@mascota.Id">
+                    Editar Mascota
+                </a>
+            </td>
+            
+           
+            
+        </tr>
+    }
+                                        </tbody>
+                                    </table>
+                                    <a class = "btn btn-danger table-btn" asp-page="./EditarMascotas" class="btn-default">Adicionar Mascotas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
